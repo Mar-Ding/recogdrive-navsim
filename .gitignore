@@ -1,0 +1,18 @@
+# Credentials
+login.md
+.env
+.env.*
+*.pem
+*.key
+# Runtime assets
+**/models/
+**/data/
+**/env/
+**/hf_cache/
+**/pip_cache/
+**/tmp/
+**/logs/
+**/__pycache__/
+*.pyc
+*.ckpt
+*.safetensors
