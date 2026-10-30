@@ -9,3 +9,5 @@
 cross-attention 版本后续统一命名 **TurboAD**，正式训练子集和 ReCogDrive PDM 评测适配见 [TurboAD 说明](bimodal_smoke/TURBOAD.md)。
 
 上游：https://github.com/xiaomi-research/recogdrive ，固定提交 `5831ee83c7a6a40bf6919715b96b0e9ba2b48335`。本仓库归档实验入口及结果，上游代码保留在服务器独立目录。
+
+当前实验版本：**v0.5-turbo-mfad-navsim-pilot**。Turbo-MFAD 已完成相同训练配置及 200 场景评测，PDMS 为 61.44（TurboAD 为 46.44）。这仍是小样本单种子试跑，详见 [版本索引](VERSIONS.md) 和 [MF 实验记录](bimodal_smoke/TURBO_MFAD.md)。
