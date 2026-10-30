@@ -16,3 +16,7 @@ login.md
 *.pyc
 *.ckpt
 *.safetensors
+# Bimodal smoke runtime artifacts (lightweight evidence is versioned)
+bimodal_smoke/artifacts/
+bimodal_smoke/outputs/
+*.pt

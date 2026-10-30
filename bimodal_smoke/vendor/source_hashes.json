@@ -1,0 +1,10 @@
+{
+  "reference\\DiffusionDrive\\kmeans_navsim_traj_20.npy": "2d341e525d7882ee5e916c67d37bea571e4c793cf801f0fff3eff59d38b20d98",
+  "reference\\DiffusionDrive\\LICENSE": "13f571790aa19bb558dbca0fe70cc0db6c09b75b47d5e5e23a1daa4441fc8ca7",
+  "reference\\DiffusionDrive\\transfuser_config.py": "9be65fcc34a7ea9d2d1662adf70e3aa6c4807faf049c168956f3e12adb25cefb",
+  "reference\\DiffusionDrive\\transfuser_features.py": "4b80250c498b53396c8515cc0f5927f8f71aed9b6825a750ff440431af2ff6c3",
+  "reference\\DiffusionDrive\\transfuser_model_v2.py": "84a7f824fa51f172d6d2a940ad566a96eb253f26231065f5283bf6507701a697",
+  "reference\\DiffusionDrive\\modules\\blocks.py": "de879c63cbfaf8fe96437cb84f4a9c28392625ec6706132032afceed4ffc2776",
+  "reference\\DiffusionDrive\\modules\\conditional_unet1d.py": "0d6d589fb29d6e076b77bddbb3d7ab6b86c216c29e13391fb532d661a13f5cf7",
+  "reference\\DiffusionDrive\\modules\\multimodal_loss.py": "699d732b1c8d858ed8b5cd72f31607ed433e031c12441c46baac697a463283fd"
+}

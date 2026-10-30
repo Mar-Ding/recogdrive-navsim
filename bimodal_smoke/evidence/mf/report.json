@@ -1,0 +1,27 @@
+{
+  "variant": "mf",
+  "steps": 50,
+  "samples": 3,
+  "scope": "Three NAVSIM test samples: debugging only, no validation/generalization claim.",
+  "device": "NVIDIA GeForce RTX 3090",
+  "physical_gpu": "2",
+  "trainable_parameters": 21644546,
+  "fixed_loss_before": 25.64687728881836,
+  "fixed_loss_after": 21.36585235595703,
+  "loss_decreased": true,
+  "gradients": {
+    "rgb_input_grad_norm": 0.052495408803224564,
+    "lidar_input_grad_norm": 0.223072350025177,
+    "fusion_grad_norm": 16.560333251953125,
+    "lidar_encoder_grad_norm": 25.47370719909668,
+    "decoder_grad_norm": 47.98006057739258
+  },
+  "fusion_max_parameter_change": 0.003363892436027527,
+  "rgb_ablation_max_difference": 0.03125,
+  "lidar_ablation_max_difference": 0.0078125,
+  "strict_reload_max_difference": 0.0,
+  "train_seconds": 5.664649721235037,
+  "peak_allocated_mib": 544.97705078125,
+  "peak_reserved_mib": 588.0,
+  "checkpoint_sha256": "6b20dad48fb87d2d49b94edb95d76786fdf8451e243d7db8cc51567b235539ab"
+}
