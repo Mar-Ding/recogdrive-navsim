@@ -1,0 +1,27 @@
+{
+  "frames": 25,
+  "camera_files": 200,
+  "lidar_files": 25,
+  "bytes": 72914625,
+  "demo_loader_checks": [
+    {
+      "token": "05a980254a915ab8",
+      "history_frames": 4,
+      "camera_files_loaded": 32,
+      "lidar_files_loaded": 4
+    },
+    {
+      "token": "678d005942c05f7e",
+      "history_frames": 4,
+      "camera_files_loaded": 32,
+      "lidar_files_loaded": 4
+    },
+    {
+      "token": "77c4ce121c9c59f2",
+      "history_frames": 4,
+      "camera_files_loaded": 32,
+      "lidar_files_loaded": 4
+    }
+  ],
+  "scope": "Metadata-associated sensor files; individual camera exposure timestamps are not provided in this manifest."
+}

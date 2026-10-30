@@ -29,3 +29,16 @@ bash /data/ruiqiwang/recogdrive_baseline/run_demo.sh
 脚本说明：run_demo.sh / run_demo.py 是已复跑验证的入口。bootstrap.sh、install_navsim.sh、download_data.sh、get_camera_subset.py 是部署过程脚本存档；它们包含本服务器绝对路径，不代表已验证的全新机器一键安装程序。environment-freeze.txt 记录最终环境（包含继承的基础环境依赖）。部署过程中另外补装了 decord==0.6.0，仓库源码固定在上述提交。
 
 本地结果快照为首次成功推理的原始输出，seconds 含 GPU 异步执行等因素，不能作为严格性能基准。
+
+## 对齐的全传感器子集
+
+已补齐原有 16 张前视 RGB 对应的各相机和 LiDAR，并扩展原 3 个 demo 样本的 4 帧历史上下文，总计 25 个元数据帧。每帧包含 8 路相机和 1 个 MergedPointCloud；共 200 张图像、25 份点云，72,914,625 字节（约 69.54 MiB）。
+
+服务器数据根目录：`/data/ruiqiwang/recogdrive_baseline/data/sensor_blobs/test`。
+`multisensor_manifest.json` 保存逐帧 token、时间戳、文件路径、SHA256、相机内参及相机到 LiDAR 外参；原始完整标定及状态仍在对应 metadata pickle 中。关联依据是官方元数据；没有额外验证各相机实际曝光时间差。
+
+下载：在服务器项目目录执行 `env/bin/python complete_sensors.py`，流式读取 camera_0 / lidar_0 官方分片并只保存目标文件，可跳过已有文件。该脚本会以现有本地前视图及 demo 历史上下文确定范围。
+验证：`PYTHONPATH=$PWD/repo MPLCONFIGDIR=$PWD/tmp/matplotlib env/bin/python verify_sensors.py`。
+所有相机已通过图片解码检查，所有点云通过 NAVSIM 使用的二进制读取接口与有限坐标检查；3 个 demo 样本均通过全传感器四帧历史加载检查。结果见 `multisensor_verification.json`，预览见 `multisensor_preview.png`。
+
+本次只补齐输入数据；基础模型推理仍保持前视图配置，尚未增加多相机或 LiDAR 编码/融合网络。
