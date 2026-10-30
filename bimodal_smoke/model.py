@@ -57,11 +57,17 @@ class MFFusion(nn.Module):
     def forward(self,v,l):
         from mf.modeling.packing import PackedRoutingLayout
         b=v.shape[0];n=v.shape[1]+l.shape[1];device=v.device
-        assert v.shape[1] in (180,540) and l.shape[1]==256
+        assert v.shape[1] in (180,270,540) and l.shape[1]==256
         nv=v.shape[1]
         rgb=torch.arange(nv,device=device);bev=torch.arange(256,device=device)
         pos=torch.cat([torch.stack([rgb//180,(rgb%180)//18,rgb%18]),
                        torch.stack([torch.full_like(bev,nv//180),bev//16,bev%16])],1)
+        if nv==270:
+            positions=[]
+            for view,(height,width) in enumerate(((10,18),(5,9),(5,9))):
+                index=torch.arange(height*width,device=device)
+                positions.append(torch.stack([torch.full_like(index,view),index//width,index%width]))
+            pos=torch.cat([*positions,torch.stack([torch.full_like(bev,3),bev//16,bev%16])],1)
         ids=torch.cat([torch.zeros_like(rgb),torch.full_like(bev,3)])
         layout=PackedRoutingLayout(positions=pos.repeat(1,b),modality_ids=ids.repeat(b),
             cu_seqlens=torch.arange(b+1,device=device,dtype=torch.int32)*n,
@@ -81,7 +87,7 @@ class BimodalPlanner(nn.Module):
         self.vision_projection=nn.Sequential(nn.Linear(768,256),nn.LayerNorm(256))
         channels=[1,32,64,128,256]
         self.lidar_encoder=nn.Sequential(*[nn.Sequential(nn.Conv2d(channels[i],channels[i+1],3,2,1),nn.GroupNorm(8,channels[i+1]),nn.GELU()) for i in range(4)])
-        self.rgb_position=nn.Parameter(torch.randn(1,540 if variant=='mf_plus' else 180,256)*.02)
+        self.rgb_position=nn.Parameter(torch.randn(1,{'mf_plus':540,'mf_plus_small':270}.get(variant,180),256)*.02)
         self.bev_position=nn.Parameter(torch.randn(1,256,256)*.02)
         self.sensor_embedding=nn.Parameter(torch.randn(2,256)*.02)
         self.status_encoder=nn.Linear(8,256)

@@ -1,0 +1,26 @@
+{
+  "demo10_mf_initial": {
+    "": "200",
+    "token": "average",
+    "valid": "True",
+    "no_at_fault_collisions": "0.4725",
+    "drivable_area_compliance": "0.485",
+    "ego_progress": "0.14694510627395985",
+    "time_to_collision_within_bound": "0.295",
+    "comfort": "0.575",
+    "driving_direction_compliance": "0.5625",
+    "score": "0.11831046094748326"
+  },
+  "demo10_mf": {
+    "": "200",
+    "token": "average",
+    "valid": "True",
+    "no_at_fault_collisions": "0.96",
+    "drivable_area_compliance": "0.845",
+    "ego_progress": "0.718824426015623",
+    "time_to_collision_within_bound": "0.91",
+    "comfort": "1.0",
+    "driving_direction_compliance": "0.9075",
+    "score": "0.752406932332662"
+  }
+}

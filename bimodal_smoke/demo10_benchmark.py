@@ -4,8 +4,14 @@ from pathlib import Path
 BASE=Path('/data/ruiqiwang/recogdrive_baseline');sys.path.append(str(BASE/'env/lib/python3.10/site-packages'))
 import torch
 from model import BimodalPlanner
-p=argparse.ArgumentParser();p.add_argument('--variant',choices=['cross','mf'],required=True);a=p.parse_args()
-torch.set_num_threads(2);samples=torch.load(BASE/'turboad/samples.pt',map_location='cpu',weights_only=False)['samples'];results=[]
+p=argparse.ArgumentParser();p.add_argument('--variant',choices=['cross','mf','mf_plus','mf_plus_small'],required=True);a=p.parse_args()
+torch.set_num_threads(2)
+if a.variant.startswith('mf_plus'):
+    folder=BASE/'demo10'/('plus_small_features' if a.variant=='mf_plus_small' else 'plus_features')
+    samples=torch.load(sorted(folder.glob('*.pt'))[0],map_location='cpu',weights_only=False)
+else:
+    samples=torch.load(BASE/'turboad/samples.pt',map_location='cpu',weights_only=False)['samples']
+results=[]
 for size in (64,128):
     torch.manual_seed(42);net=BimodalPlanner(a.variant,BASE/'bimodal_smoke/upstream/kmeans_navsim_traj_20.npy').cuda().train()
     opt=torch.optim.AdamW(net.parameters(),lr=1e-4,weight_decay=1e-4,betas=(.9,.95));inputs=[torch.stack([samples[i%len(samples)][k] for i in range(size)]).cuda().float() for k in ('vision','lidar','status','target')]

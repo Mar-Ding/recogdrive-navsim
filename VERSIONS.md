@@ -1,5 +1,7 @@
 # 实验版本索引
 
+最新部署：10% NAVSIM 的 TurboAD / Turbo-MFAD 已完成，原始 PDMS 分别为 0.70645 / 0.75241。现并行运行 TurboAD-Plus（GPU0）与辅助视角减半分辨率的 TurboAD-Plus-small（GPU2）；后两版尚未完成训练。详细配置和状态见 [NAVSIM_DEMO10](bimodal_smoke/NAVSIM_DEMO10.md)。下方旧版记录保留原有显示尺度，请勿与原始 PDMS 混用。
+
 各版本均为本地 Git 快照。checkpoint 保存在服务器，不纳入 Git；manifest、训练曲线数据、逐场景评测 CSV 和配置随对应代码提交保存。
 
 | Tag | 提交 | 内容 |

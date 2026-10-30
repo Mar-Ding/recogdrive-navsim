@@ -15,14 +15,15 @@ def lr_at(epoch):
     return 1e-4*(epoch+1)/3 if epoch<3 else 1e-6+.5*(1e-4-1e-6)*(1+math.cos(math.pi*(epoch-3)/197))
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--variant',choices=['cross','mf'],required=True);p.add_argument('--micro-batch',type=int,default=128);p.add_argument('--epochs',type=int,default=200);p.add_argument('--smoke',action='store_true');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('--variant',choices=['cross','mf','mf_plus','mf_plus_small'],required=True);p.add_argument('--micro-batch',type=int,default=128);p.add_argument('--epochs',type=int,default=200);p.add_argument('--smoke',action='store_true');a=p.parse_args()
     assert 128%a.micro_batch==0 and a.micro_batch>0 and 1<=a.epochs<=200
-    torch.set_num_threads(2);seed(42);out=ROOT/(('smoke_' if a.smoke else '')+('turboad' if a.variant=='cross' else 'turbo_mfad'));out.mkdir(exist_ok=True)
+    torch.set_num_threads(2);seed(42);out=ROOT/(('smoke_' if a.smoke else '')+{'cross':'turboad','mf':'turbo_mfad','mf_plus':'turboad_plus','mf_plus_small':'turboad_plus_small'}[a.variant]);out.mkdir(exist_ok=True)
     if a.smoke:
+        if a.variant=='mf_plus_small':raise ValueError('Use demo10_plus_check.py --small for real resized multiview smoke')
         assert a.epochs<=2
-        rows=torch.load(BASE/'turboad/samples.pt',map_location='cpu',weights_only=False)['samples'];manifest_hash=hashlib.sha256((BASE/'turboad/manifest.json').read_bytes()).hexdigest()
+        rows=torch.load(BASE/('turboad/plus_samples.pt' if a.variant=='mf_plus' else 'turboad/samples.pt'),map_location='cpu',weights_only=False)['samples'];manifest_hash=hashlib.sha256((BASE/'turboad/manifest.json').read_bytes()).hexdigest()
     else:
-        feature_info=json.loads((ROOT/'features_complete.json').read_text());manifest_hash=hashlib.sha256((ROOT/'manifest.json').read_bytes()).hexdigest();assert feature_info['manifest_sha256']==manifest_hash
+        feature_info=json.loads((ROOT/({'mf_plus':'plus_features_complete.json','mf_plus_small':'plus_small_features_complete.json'}.get(a.variant,'features_complete.json'))).read_text());manifest_hash=hashlib.sha256((ROOT/'manifest.json').read_bytes()).hexdigest();assert feature_info['manifest_sha256']==manifest_hash
         rows=[]
         for path in feature_info['files']:rows.extend(torch.load(path,map_location='cpu',weights_only=False))
         assert len(rows)==feature_info['samples']
@@ -33,7 +34,7 @@ def main():
     tokens=[r['token'] for r in rows];tensors={k:torch.stack([r[k] for r in rows]) for k in ('vision','lidar','status','target')};del rows
     def batch(ids):return [tensors[k][ids].cuda().float() for k in ('vision','lidar','status','target')]
     net=BimodalPlanner(a.variant,BASE/'bimodal_smoke/upstream/kmeans_navsim_traj_20.npy').cuda();opt=torch.optim.AdamW(net.parameters(),lr=1e-4,weight_decay=1e-4,betas=(.9,.95))
-    config=dict(variant=a.variant,smoke=a.smoke,seed=42,micro_batch=a.micro_batch,effective_batch=128,gradient_accumulation=128//a.micro_batch,world_size=1,epochs=a.epochs,lr=1e-4,min_lr=1e-6,warmup_epochs=3,scheduler_horizon=200,weight_decay=1e-4,betas=[.9,.95],precision='bf16',frozen_encoder=True,input='front RGB 288x160 + LiDAR BEV 256x256; ego status',manifest_sha256=manifest_hash)
+    config=dict(variant=a.variant,smoke=a.smoke,seed=42,micro_batch=a.micro_batch,effective_batch=128,gradient_accumulation=128//a.micro_batch,world_size=1,epochs=a.epochs,lr=1e-4,min_lr=1e-6,warmup_epochs=3,scheduler_horizon=200,weight_decay=1e-4,betas=[.9,.95],precision='bf16',frozen_encoder=True,input=({'mf_plus':'F0/L0/R0 RGB 288x160','mf_plus_small':'F0 RGB 288x160 + L0/R0 RGB 144x80'}.get(a.variant,'front RGB 288x160')+' + LiDAR BEV 256x256; ego status'),manifest_sha256=manifest_hash)
     atomic_json(out/'config.json',config)
     def evaluate():
         net.eval();seed(123);ade=fde=loss_sum=0.;n=0

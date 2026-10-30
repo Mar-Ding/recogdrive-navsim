@@ -19,9 +19,11 @@ try:
                 if name.endswith('_config.yaml'):get(folder+'/'+name,evidence/'turboad'/label/'score_config.yaml')
         for name in ('data_audit.json','pipeline_status.json','download_budget.json','benchmark_cross.json','benchmark_mf.json','features_complete.json','sensors_complete.json','comparison.json'):
             get(f'{BASE}/demo10/{name}',evidence/'demo10'/name)
-        for label in ('smoke_turboad','smoke_turbo_mfad','turboad','turbo_mfad'):
+        for name in ('plus_status.json','plus_small_status.json','plus_features_complete.json','plus_small_features_complete.json','plus_model_check.json','plus_small_model_check.json','benchmark_mf_plus.json','benchmark_mf_plus_small.json','plus_comparison.json'):
+            get(f'{BASE}/demo10/{name}',evidence/'demo10'/name)
+        for label in ('smoke_turboad','smoke_turbo_mfad','turboad','turbo_mfad','turboad_plus','turboad_plus_small'):
             for name in ('summary.json','history.json','config.json','progress.json','evaluation.json'):get(f'{BASE}/demo10/{label}/{name}',evidence/'demo10'/label/name)
-        for label in ('cross_initial','cross','mf_initial','mf'):get(f'{BASE}/demo10/demo10_{label}.csv',evidence/'demo10'/f'score_{label}.csv')
+        for label in ('cross_initial','cross','mf_initial','mf','plus_initial','plus','plus_small_initial','plus_small'):get(f'{BASE}/demo10/demo10_{label}.csv',evidence/'demo10'/f'score_{label}.csv')
         for name,path in {
             'official_il_2b.sh':'scripts/training/run_recogdrive_train_multi_node_2b.sh',
             'official_accelerate_il_2b.sh':'scripts/training_accelerate/run_recogdrive_train_multi_node_2b.sh',

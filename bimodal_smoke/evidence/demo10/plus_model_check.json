@@ -1,0 +1,17 @@
+{
+  "variant": "mf_plus",
+  "tokens": 540,
+  "loss": 18.187395095825195,
+  "front_left_right_lidar_gradient_sums": [
+    6.805405616760254,
+    6.913954734802246,
+    6.755021095275879,
+    21.311065673828125
+  ],
+  "prediction_shape": [
+    2,
+    8,
+    3
+  ],
+  "finite": true
+}
