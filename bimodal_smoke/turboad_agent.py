@@ -18,8 +18,9 @@ class TurboADAgent(AbstractAgent):
     def initialize(self):
         torch.set_num_threads(2)
         self.encoder=AutoModel.from_pretrained(self.encoder_path,local_files_only=True,attn_implementation='sdpa').cuda().eval().requires_grad_(False)
-        self.planner=BimodalPlanner('cross',Path('/data/ruiqiwang/recogdrive_baseline/bimodal_smoke/upstream/kmeans_navsim_traj_20.npy')).cuda().eval()
         checkpoint=torch.load(self.checkpoint_path,map_location='cpu',weights_only=False)
+        variant=checkpoint.get('variant','cross')
+        self.planner=BimodalPlanner(variant,Path('/data/ruiqiwang/recogdrive_baseline/bimodal_smoke/upstream/kmeans_navsim_traj_20.npy')).cuda().eval()
         self.planner.load_state_dict(checkpoint['model'],strict=True)
     def compute_trajectory(self,agent_input):
         image=Image.fromarray(agent_input.cameras[-1].cam_f0.image).convert('RGB').resize((288,160))

@@ -3,7 +3,7 @@ from pathlib import Path
 root=Path('bimodal_smoke/evidence/turboad')
 tokens=set(json.loads((root/'navtest_subset_tokens.json').read_text()))
 report={}
-for label in ('initial','pilot','expanded'):
+for label in ('initial','pilot','expanded','mf_initial','mf_expanded'):
     rows=list(csv.DictReader((root/f'score_{label}.csv').open()))
     scenes=[r for r in rows if r['token']!='average']
     assert len(scenes)==200 and {r['token'] for r in scenes}==tokens

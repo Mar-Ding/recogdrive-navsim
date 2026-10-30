@@ -1,0 +1,36 @@
+{
+  "name": "Turbo-MFAD",
+  "train_samples": 129,
+  "val_samples": 338,
+  "train_logs": 4,
+  "val_logs": 2,
+  "epochs": 20,
+  "steps": 100,
+  "batch": 32,
+  "seconds": 69.76218967698514,
+  "peak_allocated_gib": 2.7142887115478516,
+  "initial": {
+    "val_loss": 17.833050665770763,
+    "ade": 10.12963581085205,
+    "fde": 18.266069412231445,
+    "moving_ade": 10.156435012817383,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "final": {
+    "epoch": 20,
+    "step": 100,
+    "train_loss": 14.733159989349602,
+    "grad_norm_mean": 10.934327030181885,
+    "val_loss": 16.202251592331383,
+    "ade": 6.274387836456299,
+    "fde": 10.98392105102539,
+    "moving_ade": 6.289858818054199,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "best_val_ade": 6.1140336990356445,
+  "scope": "Internal log-disjoint navtrain validation, NOT navtest PDMS"
+}

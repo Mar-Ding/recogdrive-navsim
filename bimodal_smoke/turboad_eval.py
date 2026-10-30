@@ -11,7 +11,7 @@ from hydra import initialize_config_dir,compose
 from omegaconf import OmegaConf
 
 def main():
-    p=argparse.ArgumentParser();p.add_argument('mode',choices=['cache','score']);p.add_argument('--tokens',required=True);p.add_argument('--checkpoint',default=str(BASE/'turboad/pilot_seed42/best_val_ade.pt'));p.add_argument('--label',choices=['initial','pilot','expanded'],default='pilot');a=p.parse_args()
+    p=argparse.ArgumentParser();p.add_argument('mode',choices=['cache','score']);p.add_argument('--tokens',required=True);p.add_argument('--checkpoint',default=str(BASE/'turboad/pilot_seed42/best_val_ade.pt'));p.add_argument('--label',choices=['initial','pilot','expanded','mf_initial','mf_expanded'],default='pilot');a=p.parse_args()
     tokens=json.loads(Path(a.tokens).read_text());assert tokens and len(tokens)==len(set(tokens))
     kind='metric_caching' if a.mode=='cache' else 'pdm_scoring'
     name='default_metric_caching' if a.mode=='cache' else 'default_run_pdm_score'
