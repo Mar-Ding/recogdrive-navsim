@@ -1,0 +1,41 @@
+{
+  "variant": "mf",
+  "scope": "Repeated debug samples, cached frozen vision features, BF16 AdamW, 3 warmup + 5 measured steps",
+  "results": [
+    {
+      "batch": 1,
+      "allocated_gib": 0.42435646057128906,
+      "reserved_gib": 0.458984375,
+      "seconds_per_step": 0.10188772343099117,
+      "samples_per_second": 9.814725133958879
+    },
+    {
+      "batch": 8,
+      "allocated_gib": 0.9543137550354004,
+      "reserved_gib": 1.068359375,
+      "seconds_per_step": 0.10734199620783329,
+      "samples_per_second": 74.52814632318344
+    },
+    {
+      "batch": 16,
+      "allocated_gib": 1.5401978492736816,
+      "reserved_gib": 1.716796875,
+      "seconds_per_step": 0.11101424507796764,
+      "samples_per_second": 144.1256479180925
+    },
+    {
+      "batch": 32,
+      "allocated_gib": 2.7134413719177246,
+      "reserved_gib": 3.041015625,
+      "seconds_per_step": 0.11626437604427338,
+      "samples_per_second": 275.23478032354836
+    },
+    {
+      "batch": 64,
+      "allocated_gib": 5.1243510246276855,
+      "reserved_gib": 5.720703125,
+      "seconds_per_step": 0.17400107979774476,
+      "samples_per_second": 367.81380939929954
+    }
+  ]
+}

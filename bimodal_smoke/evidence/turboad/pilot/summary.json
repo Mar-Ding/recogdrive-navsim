@@ -1,0 +1,36 @@
+{
+  "name": "TurboAD",
+  "train_samples": 116,
+  "val_samples": 128,
+  "train_logs": 4,
+  "val_logs": 2,
+  "epochs": 20,
+  "steps": 80,
+  "batch": 32,
+  "seconds": 50.935275964438915,
+  "peak_allocated_gib": 1.8429875373840332,
+  "initial": {
+    "val_loss": 17.90876865386963,
+    "ade": 9.208093643188477,
+    "fde": 16.507577896118164,
+    "moving_ade": 9.208093643188477,
+    "moving_count": 128,
+    "stop_ade": 9.909265518188477,
+    "stop_fde": 17.827661514282227
+  },
+  "final": {
+    "epoch": 20,
+    "step": 80,
+    "train_loss": 15.101230325369999,
+    "grad_norm_mean": 7.9193315505981445,
+    "val_loss": 16.066628217697144,
+    "ade": 5.658297538757324,
+    "fde": 10.057890892028809,
+    "moving_ade": 5.658297538757324,
+    "moving_count": 128,
+    "stop_ade": 9.909265518188477,
+    "stop_fde": 17.827661514282227
+  },
+  "best_val_ade": 5.589902877807617,
+  "scope": "Internal log-disjoint navtrain validation, NOT navtest PDMS"
+}

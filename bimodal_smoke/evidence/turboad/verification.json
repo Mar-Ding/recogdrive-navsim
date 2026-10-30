@@ -1,0 +1,50 @@
+{
+  "initial": {
+    "scenarios": 200,
+    "failed": 0,
+    "average": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.3875",
+      "drivable_area_compliance": "0.555",
+      "ego_progress": "0.1052142390972134",
+      "time_to_collision_within_bound": "0.25",
+      "comfort": "0.515",
+      "driving_direction_compliance": "0.57",
+      "score": "0.07633926629050558"
+    }
+  },
+  "pilot": {
+    "scenarios": 200,
+    "failed": 0,
+    "average": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.49",
+      "drivable_area_compliance": "0.635",
+      "ego_progress": "0.2125805622683657",
+      "time_to_collision_within_bound": "0.205",
+      "comfort": "0.8",
+      "driving_direction_compliance": "0.7575",
+      "score": "0.17565856761181906"
+    }
+  },
+  "expanded": {
+    "scenarios": 200,
+    "failed": 0,
+    "average": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.77",
+      "drivable_area_compliance": "0.835",
+      "ego_progress": "0.4056742002145847",
+      "time_to_collision_within_bound": "0.65",
+      "comfort": "0.815",
+      "driving_direction_compliance": "0.9325",
+      "score": "0.4644475834227436"
+    }
+  }
+}
