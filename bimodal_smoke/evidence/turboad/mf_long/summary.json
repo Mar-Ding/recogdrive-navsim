@@ -1,0 +1,48 @@
+{
+  "name": "Turbo-MFAD",
+  "train_samples": 129,
+  "val_samples": 338,
+  "train_logs": 4,
+  "val_logs": 2,
+  "epochs": 100,
+  "steps": 500,
+  "batch": 32,
+  "seconds": 335.3430878482759,
+  "peak_allocated_gib": 2.7191405296325684,
+  "resumed_from": "/data/ruiqiwang/recogdrive_baseline/turboad/mf_expanded_seed42",
+  "start_epoch": 20,
+  "resume_metrics": {
+    "val_loss": 16.202251592331383,
+    "ade": 6.274387836456299,
+    "fde": 10.98392105102539,
+    "moving_ade": 6.289858818054199,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "initial": {
+    "epoch": 0,
+    "val_loss": 17.833050665770763,
+    "ade": 10.12963581085205,
+    "fde": 18.266069412231445,
+    "moving_ade": 10.156435012817383,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "final": {
+    "epoch": 100,
+    "step": 500,
+    "train_loss": 12.68109289065812,
+    "grad_norm_mean": 22.307413864135743,
+    "val_loss": 16.6650335097454,
+    "ade": 3.7457380294799805,
+    "fde": 6.933589458465576,
+    "moving_ade": 3.7471232414245605,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "best_val_ade": 3.60122013092041,
+  "scope": "Internal log-disjoint navtrain validation, NOT navtest PDMS"
+}

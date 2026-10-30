@@ -1,5 +1,5 @@
 """TurboAD bounded IL pilot with log-disjoint validation; no test selection."""
-import sys,json,time,random,hashlib,argparse
+import sys,json,time,random,hashlib,argparse,shutil
 from pathlib import Path
 BASE=Path('/data/ruiqiwang/recogdrive_baseline')
 sys.path.append(str(BASE/'env/lib/python3.10/site-packages'))
@@ -9,10 +9,12 @@ from model import BimodalPlanner
 def seed(n):random.seed(n);np.random.seed(n);torch.manual_seed(n);torch.cuda.manual_seed_all(n)
 def main():
     p=argparse.ArgumentParser();p.add_argument('--epochs',type=int,default=20);p.add_argument('--batch',type=int,default=32);p.add_argument('--run',default='pilot_seed42');p.add_argument('--variant',choices=['cross','mf','mf_plus'],default='cross');a=p.parse_args()
-    assert a.run in ('pilot_seed42','expanded_seed42','mf_expanded_seed42','plus_seed42')
-    assert {'cross':'expanded_seed42','mf':'mf_expanded_seed42','mf_plus':'plus_seed42'}[a.variant]==a.run or (a.variant=='cross' and a.run=='pilot_seed42')
+    assert a.run in ('pilot_seed42','expanded_seed42','mf_expanded_seed42','plus_seed42','mf_long_seed42','plus_long_seed42')
+    long_run=a.run in ('mf_long_seed42','plus_long_seed42')
+    expected_run={'mf':'mf_long_seed42','mf_plus':'plus_long_seed42'} if long_run else {'cross':'expanded_seed42','mf':'mf_expanded_seed42','mf_plus':'plus_seed42'}
+    assert expected_run.get(a.variant)==a.run or (a.variant=='cross' and a.run=='pilot_seed42')
     name={'cross':'TurboAD','mf':'Turbo-MFAD','mf_plus':'TurboAD-Plus'}[a.variant]
-    assert 1<=a.epochs<=40 and 1<=a.batch<=64
+    assert 1<=a.epochs<=(100 if long_run else 40) and 1<=a.batch<=64
     torch.set_num_threads(2);seed(42);root=BASE/'turboad';out=root/a.run;out.mkdir(exist_ok=True)
     payload=torch.load(root/('plus_samples.pt' if a.variant=='mf_plus' else 'samples.pt'),map_location='cpu',weights_only=False);samples=payload['samples']
     train=[s for s in samples if s['split']=='train'];val=[s for s in samples if s['split']=='val']
@@ -21,6 +23,15 @@ def main():
     def batch(rows):return [torch.stack([s[k] for s in rows]).cuda().float() for k in keys]
     net=BimodalPlanner(a.variant,BASE/'bimodal_smoke/upstream/kmeans_navsim_traj_20.npy').cuda()
     opt=torch.optim.AdamW(net.parameters(),lr=1e-4,weight_decay=1e-4)
+    resume=None;source=None
+    if long_run:
+        source=root/('mf_expanded_seed42' if a.variant=='mf' else 'plus_seed42')
+        resume=torch.load(source/'latest.pt',map_location='cpu',weights_only=False)
+        assert resume['variant']==a.variant and resume['epoch']==20 and resume['config']['batch']==a.batch
+        assert resume['manifest_sha256']==hashlib.sha256((root/'manifest.json').read_bytes()).hexdigest()
+        net.load_state_dict(resume['model'],strict=True);opt.load_state_dict(resume['optimizer'])
+        assert not (out/'latest.pt').exists(),'Refuse to overwrite an existing long run'
+        shutil.copy2(source/'best_val_ade.pt',out/'best_val_ade.pt')
     def evaluate():
         net.eval();preds=[];targets=[];losses=[];seed(123)
         with torch.no_grad():
@@ -39,9 +50,15 @@ def main():
         assert torch.isfinite(pred).all() and all(np.isfinite(v) for v in metrics.values() if v is not None)
         return metrics,pred
     initial,_=evaluate();history=[dict(epoch=0,**initial)];print(json.dumps(history[-1]),flush=True)
-    best=float('inf');started=time.perf_counter();steps=0
+    start_epoch=0;steps=0;best=float('inf');resume_metrics=initial
+    if long_run:
+        history=json.loads((source/'history.json').read_text())
+        initial=history[0];start_epoch=resume['epoch'];steps=resume['step']
+        best=min(row['ade'] for row in history[1:])
+        assert abs(resume_metrics['ade']-history[-1]['ade'])<1e-4,'Resume metric mismatch'
+    started=time.perf_counter()
     torch.cuda.reset_peak_memory_stats()
-    for epoch in range(1,a.epochs+1):
+    for epoch in range(start_epoch+1,a.epochs+1):
         seed(42+epoch);order=torch.randperm(len(train)).tolist();loss_sum=0;norms=[];net.train()
         for i in range(0,len(order),a.batch):
             rows=[train[j] for j in order[i:i+a.batch]];v,l,s,y=batch(rows);opt.zero_grad(set_to_none=True)
@@ -60,6 +77,6 @@ def main():
         (out/'val_predictions.json').write_text(json.dumps([dict(token=s['token'],prediction=p.tolist(),target=s['target'].tolist()) for s,p in zip(val,pred)]))
     summary=dict(name=name,train_samples=len(train),val_samples=len(val),train_logs=len({s['log_name'] for s in train}),val_logs=len({s['log_name'] for s in val}),
         epochs=a.epochs,steps=steps,batch=a.batch,seconds=time.perf_counter()-started,peak_allocated_gib=torch.cuda.max_memory_allocated()/2**30,
-        initial=initial,final=history[-1],best_val_ade=best,scope='Internal log-disjoint navtrain validation, NOT navtest PDMS')
+        resumed_from=str(source) if source else None,start_epoch=start_epoch,resume_metrics=resume_metrics,initial=initial,final=history[-1],best_val_ade=best,scope='Internal log-disjoint navtrain validation, NOT navtest PDMS')
     (out/'summary.json').write_text(json.dumps(summary,indent=2));print('TURBOAD_PILOT_OK',json.dumps(summary),flush=True)
 if __name__=='__main__':main()

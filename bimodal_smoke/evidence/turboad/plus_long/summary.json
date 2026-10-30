@@ -1,0 +1,48 @@
+{
+  "name": "TurboAD-Plus",
+  "train_samples": 129,
+  "val_samples": 338,
+  "train_logs": 4,
+  "val_logs": 2,
+  "epochs": 100,
+  "steps": 500,
+  "batch": 32,
+  "seconds": 373.99558459594846,
+  "peak_allocated_gib": 4.032431602478027,
+  "resumed_from": "/data/ruiqiwang/recogdrive_baseline/turboad/plus_seed42",
+  "start_epoch": 20,
+  "resume_metrics": {
+    "val_loss": 16.108316658516607,
+    "ade": 6.368519306182861,
+    "fde": 10.922943115234375,
+    "moving_ade": 6.38424825668335,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "initial": {
+    "epoch": 0,
+    "val_loss": 18.16905492297291,
+    "ade": 8.837433815002441,
+    "fde": 16.538726806640625,
+    "moving_ade": 8.844414710998535,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "final": {
+    "epoch": 100,
+    "step": 500,
+    "train_loss": 12.494658847187841,
+    "grad_norm_mean": 28.489671325683595,
+    "val_loss": 17.146435641678128,
+    "ade": 4.991671085357666,
+    "fde": 8.885920524597168,
+    "moving_ade": 4.975080966949463,
+    "moving_count": 337,
+    "stop_ade": 9.43674373626709,
+    "stop_fde": 16.957752227783203
+  },
+  "best_val_ade": 4.051663398742676,
+  "scope": "Internal log-disjoint navtrain validation, NOT navtest PDMS"
+}

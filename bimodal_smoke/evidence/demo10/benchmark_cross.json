@@ -1,0 +1,20 @@
+{
+  "variant": "cross",
+  "scope": "cached frozen DINOv3; single 3090 BF16 AdamW, 2 warmup + 3 measured steps",
+  "results": [
+    {
+      "batch": 64,
+      "allocated_gib": 3.4522109031677246,
+      "reserved_gib": 4.0859375,
+      "seconds_per_step": 0.14623385109007359,
+      "samples_per_second": 437.6551634448773
+    },
+    {
+      "batch": 128,
+      "allocated_gib": 6.686702728271484,
+      "reserved_gib": 7.31640625,
+      "seconds_per_step": 0.2689747295031945,
+      "samples_per_second": 475.88113662729717
+    }
+  ]
+}

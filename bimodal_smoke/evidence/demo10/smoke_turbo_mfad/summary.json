@@ -1,0 +1,50 @@
+{
+  "config": {
+    "variant": "mf",
+    "smoke": true,
+    "seed": 42,
+    "micro_batch": 64,
+    "effective_batch": 128,
+    "gradient_accumulation": 2,
+    "world_size": 1,
+    "epochs": 2,
+    "lr": 0.0001,
+    "min_lr": 1e-06,
+    "warmup_epochs": 3,
+    "scheduler_horizon": 200,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "precision": "bf16",
+    "frozen_encoder": true,
+    "input": "front RGB 288x160 + LiDAR BEV 256x256; ego status",
+    "manifest_sha256": "d3efdb831a793c23759f81a1939848a4ad8c753254c4dde5b258df4cef7419e2"
+  },
+  "train_samples": 129,
+  "val_samples": 338,
+  "epochs": 2,
+  "steps": 4,
+  "seconds": 8.522206395864487,
+  "peak_allocated_gib": 5.2054033279418945,
+  "initial": {
+    "epoch": 0,
+    "ade": 9.776475714508598,
+    "fde": 17.632086037178716,
+    "val_loss": 18.130708096295418
+  },
+  "final": {
+    "epoch": 2,
+    "step": 4,
+    "lr": 6.666666666666667e-05,
+    "train_loss": 17.47428522923196,
+    "grad_norm_mean": 28.104907035827637,
+    "seconds": 1.360132109373808,
+    "ade": 7.025822972404886,
+    "fde": 12.985459547776442,
+    "val_loss": 17.00069957936304
+  },
+  "best_val_ade": 7.025822972404886,
+  "scope": "first 20/200 shards, official navtrain; log-disjoint internal validation; fixed 200 navtest evaluated separately"
+}

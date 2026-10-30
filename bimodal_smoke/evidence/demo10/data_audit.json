@@ -1,0 +1,39 @@
+{
+  "selection": "first 20 of 200 sensor shards, then official navtrain scene filter; approximate 10%, not exact token 10%",
+  "shards": [
+    0,
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19
+  ],
+  "official_navtrain_scenes": 103288,
+  "selected_scenes": 10618,
+  "scene_fraction": 0.1027999380373325,
+  "official_navtrain_logs": 1192,
+  "selected_logs": 126,
+  "train_samples": 8688,
+  "val_samples": 1930,
+  "train_logs": 107,
+  "val_logs": 19,
+  "fixed_old_val_logs": [
+    "2021.06.09.17.23.18_veh-38_04782_05228",
+    "2021.08.17.17.17.01_veh-45_00207_00594"
+  ],
+  "navtest_token_overlap": 0
+}

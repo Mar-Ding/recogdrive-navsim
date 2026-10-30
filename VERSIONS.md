@@ -36,3 +36,9 @@ git switch -c experiment/my-run v0.5-turbo-mfad-navsim-pilot
 ## v0.6-turboad-plus-navsim-pilot
 
 三视角 RGB（F0/L0/R0）+ LiDAR、MF 融合；与 v0.5 相同训练划分与 200 场景原生评测。20 epoch、100 step、batch32。PDMS=43.88，200/200成功；本轮未优于单视角 MF，继续保留 v0.5 作为效果基线。权重 `turboad/plus_seed42/{best_val_ade,latest}.pt`，详情见 [Plus 记录](bimodal_smoke/TURBOAD_PLUS.md)。
+
+## v0.7-navsim-demo10-deployment
+
+归档 MF / Plus 从20扩展到100 epoch的已完成实验：200场景PDMS分别36.63 / 23.82，验证ADE改善但测试下降，保留旧权重。
+
+新增约10%数据部署：官方前20/200传感器分片，共10,618场景（navtrain的10.28%），训练8,688 / 验证1,930，日志隔离。TurboAD与Turbo-MFAD分别单卡GPU0/2，参考官方常规IL的有效batch128、200epoch、AdamW和warmup/cosine。已通过显存实测与两轮训练smoke；此版本是下载、训练、评测自动流程的部署快照，尚不是新一轮完整训练结果。详情见 [数据与预算记录](bimodal_smoke/NAVSIM_DEMO10.md)。

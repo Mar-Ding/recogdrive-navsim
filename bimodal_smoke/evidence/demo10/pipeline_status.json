@@ -1,0 +1,11 @@
+{
+  "stage": "downloading",
+  "time": 1793373418.911257,
+  "expected_shards": 20,
+  "models": [
+    "TurboAD",
+    "Turbo-MFAD"
+  ],
+  "epochs": 200,
+  "effective_batch": 128
+}

@@ -1,0 +1,248 @@
+{
+  "archives": [
+    {
+      "kind": "camera",
+      "shard": 0,
+      "bytes": 4704972041,
+      "existing_bytes": 4704972041
+    },
+    {
+      "kind": "camera",
+      "shard": 1,
+      "bytes": 4633543276,
+      "existing_bytes": 4633543276
+    },
+    {
+      "kind": "camera",
+      "shard": 2,
+      "bytes": 9037230621,
+      "existing_bytes": 2265231360
+    },
+    {
+      "kind": "camera",
+      "shard": 3,
+      "bytes": 3856766877,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 4,
+      "bytes": 7061934429,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 5,
+      "bytes": 4324551212,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 6,
+      "bytes": 4387135367,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 7,
+      "bytes": 3881002793,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 8,
+      "bytes": 13081301356,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 9,
+      "bytes": 4723629547,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 10,
+      "bytes": 7882513097,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 11,
+      "bytes": 9024447390,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 12,
+      "bytes": 5537245198,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 13,
+      "bytes": 7115194077,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 14,
+      "bytes": 4175911641,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 15,
+      "bytes": 7215631954,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 16,
+      "bytes": 3522454309,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 17,
+      "bytes": 12696865406,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 18,
+      "bytes": 3368316082,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "camera",
+      "shard": 19,
+      "bytes": 4397351699,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 0,
+      "bytes": 3456836376,
+      "existing_bytes": 3456836376
+    },
+    {
+      "kind": "lidar",
+      "shard": 1,
+      "bytes": 3221152315,
+      "existing_bytes": 3221152315
+    },
+    {
+      "kind": "lidar",
+      "shard": 2,
+      "bytes": 6229072454,
+      "existing_bytes": 1337450496
+    },
+    {
+      "kind": "lidar",
+      "shard": 3,
+      "bytes": 2597333465,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 4,
+      "bytes": 5140811072,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 5,
+      "bytes": 2944587318,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 6,
+      "bytes": 2982497154,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 7,
+      "bytes": 2855174781,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 8,
+      "bytes": 8901000107,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 9,
+      "bytes": 3530027417,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 10,
+      "bytes": 5497802625,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 11,
+      "bytes": 6478866840,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 12,
+      "bytes": 4023410727,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 13,
+      "bytes": 4969220953,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 14,
+      "bytes": 2898103846,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 15,
+      "bytes": 5096399064,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 16,
+      "bytes": 2497405251,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 17,
+      "bytes": 8973683753,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 18,
+      "bytes": 2475635360,
+      "existing_bytes": 0
+    },
+    {
+      "kind": "lidar",
+      "shard": 19,
+      "bytes": 3024280294,
+      "existing_bytes": 0
+    }
+  ],
+  "total_archive_bytes": 212421299544,
+  "remaining_download_bytes": 192802113680,
+  "disk_free_bytes": 418427760640,
+  "reserved_free_bytes": 32212254720
+}
