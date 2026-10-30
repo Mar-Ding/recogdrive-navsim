@@ -8,13 +8,13 @@ from model import BimodalPlanner
 
 def seed(n):random.seed(n);np.random.seed(n);torch.manual_seed(n);torch.cuda.manual_seed_all(n)
 def main():
-    p=argparse.ArgumentParser();p.add_argument('--epochs',type=int,default=20);p.add_argument('--batch',type=int,default=32);p.add_argument('--run',default='pilot_seed42');p.add_argument('--variant',choices=['cross','mf'],default='cross');a=p.parse_args()
-    assert a.run in ('pilot_seed42','expanded_seed42','mf_expanded_seed42')
-    assert (a.variant=='mf') == a.run.startswith('mf_')
-    name='Turbo-MFAD' if a.variant=='mf' else 'TurboAD'
+    p=argparse.ArgumentParser();p.add_argument('--epochs',type=int,default=20);p.add_argument('--batch',type=int,default=32);p.add_argument('--run',default='pilot_seed42');p.add_argument('--variant',choices=['cross','mf','mf_plus'],default='cross');a=p.parse_args()
+    assert a.run in ('pilot_seed42','expanded_seed42','mf_expanded_seed42','plus_seed42')
+    assert {'cross':'expanded_seed42','mf':'mf_expanded_seed42','mf_plus':'plus_seed42'}[a.variant]==a.run or (a.variant=='cross' and a.run=='pilot_seed42')
+    name={'cross':'TurboAD','mf':'Turbo-MFAD','mf_plus':'TurboAD-Plus'}[a.variant]
     assert 1<=a.epochs<=40 and 1<=a.batch<=64
     torch.set_num_threads(2);seed(42);root=BASE/'turboad';out=root/a.run;out.mkdir(exist_ok=True)
-    payload=torch.load(root/'samples.pt',map_location='cpu',weights_only=False);samples=payload['samples']
+    payload=torch.load(root/('plus_samples.pt' if a.variant=='mf_plus' else 'samples.pt'),map_location='cpu',weights_only=False);samples=payload['samples']
     train=[s for s in samples if s['split']=='train'];val=[s for s in samples if s['split']=='val']
     assert train and val and not ({s['log_name'] for s in train}&{s['log_name'] for s in val})
     keys=('vision','lidar','status','target')

@@ -1,0 +1,20 @@
+{
+  "training_tokens": 467,
+  "train": 129,
+  "validation": 338,
+  "test_tokens": 200,
+  "views": [
+    "CAM_F0",
+    "CAM_L0",
+    "CAM_R0"
+  ],
+  "unchanged": [
+    "token order",
+    "split",
+    "log_name",
+    "lidar",
+    "status",
+    "target"
+  ],
+  "visual_tokens": 540
+}

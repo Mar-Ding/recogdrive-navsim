@@ -32,3 +32,7 @@ git switch -c experiment/my-run v0.5-turbo-mfad-navsim-pilot
 ```
 
 后续实验应使用新的 run 目录与提交，保留这些基线权重和结果。当前没有配置远端仓库，版本均保存在本地，尚未推送。
+
+## v0.6-turboad-plus-navsim-pilot
+
+三视角 RGB（F0/L0/R0）+ LiDAR、MF 融合；与 v0.5 相同训练划分与 200 场景原生评测。20 epoch、100 step、batch32。PDMS=43.88，200/200成功；本轮未优于单视角 MF，继续保留 v0.5 作为效果基线。权重 `turboad/plus_seed42/{best_val_ade,latest}.pt`，详情见 [Plus 记录](bimodal_smoke/TURBOAD_PLUS.md)。

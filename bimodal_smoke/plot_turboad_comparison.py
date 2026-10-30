@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 import json
 r=root/'evidence/turboad'
 fig,axes=plt.subplots(1,3,figsize=(12,3.6))
-for folder,label in [('expanded','TurboAD'),('mf_expanded','Turbo-MFAD')]:
+for folder,label in [('expanded','TurboAD'),('mf_expanded','Turbo-MFAD'),('plus','TurboAD-Plus')]:
     h=json.loads((r/folder/'history.json').read_text())
     for ax,key in zip(axes,['val_loss','ade','fde']):
         ax.plot([x['epoch'] for x in h],[x[key] for x in h],label=label)

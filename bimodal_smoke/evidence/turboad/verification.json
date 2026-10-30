@@ -78,5 +78,37 @@
       "driving_direction_compliance": "0.97",
       "score": "0.614362427419298"
     }
+  },
+  "plus_initial": {
+    "scenarios": 200,
+    "failed": 0,
+    "average": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.46",
+      "drivable_area_compliance": "0.275",
+      "ego_progress": "0.1321488629589019",
+      "time_to_collision_within_bound": "0.29",
+      "comfort": "0.73",
+      "driving_direction_compliance": "0.4475",
+      "score": "0.11047869289954246"
+    }
+  },
+  "plus": {
+    "scenarios": 200,
+    "failed": 0,
+    "average": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.88",
+      "drivable_area_compliance": "0.89",
+      "ego_progress": "0.392130634683327",
+      "time_to_collision_within_bound": "0.695",
+      "comfort": "0.165",
+      "driving_direction_compliance": "0.9875",
+      "score": "0.4388044311180529"
+    }
   }
 }

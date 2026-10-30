@@ -1,0 +1,7 @@
+{
+  "checkpoint_epoch": 2,
+  "trainable_parameters": 21736706,
+  "left_zero_max_abs_delta": 0.0390625,
+  "right_zero_max_abs_delta": 0.0340576171875,
+  "scope": "Single-sample computational dependency check; not a performance ablation"
+}
