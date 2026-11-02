@@ -1,0 +1,12 @@
+{
+  "": "200",
+  "token": "average",
+  "valid": "True",
+  "no_at_fault_collisions": "0.9475",
+  "drivable_area_compliance": "0.83",
+  "ego_progress": "0.6944495830097382",
+  "time_to_collision_within_bound": "0.89",
+  "comfort": "1.0",
+  "driving_direction_compliance": "0.9125",
+  "score": "0.7226652810791836"
+}

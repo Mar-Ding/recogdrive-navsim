@@ -1,0 +1,18 @@
+{
+  "turbo_cross_vla": {
+    "completed_epochs": 17,
+    "initial_ade": 12.297313875979093,
+    "current_ade": 1.1707512410811192,
+    "seconds_per_epoch": 13.139498376846314,
+    "projected_total_training_minutes": 43.798327922821045,
+    "remaining_training_minutes": 40.07547004938126
+  },
+  "multiview_mf_vla": {
+    "completed_epochs": 8,
+    "initial_ade": 7.2387471332451225,
+    "current_ade": 1.3462761335422337,
+    "seconds_per_epoch": 27.047198677062987,
+    "projected_total_training_minutes": 90.15732892354329,
+    "remaining_training_minutes": 86.55103576660154
+  }
+}

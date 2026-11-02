@@ -1,0 +1,20 @@
+{
+  "no_at_fault_collisions": 1.0,
+  "drivable_area_compliance": 1.0,
+  "ego_progress": 0.8194323907018464,
+  "time_to_collision_within_bound": 1.0,
+  "comfort": 1.0,
+  "driving_direction_compliance": 1.0,
+  "score": 0.9247634961257694,
+  "token": "average",
+  "valid": true,
+  "successful_scenarios": 1,
+  "failed_scenarios": 0,
+  "seconds": 1.7868126090615988,
+  "checkpoint_epoch": 3,
+  "checkpoint_sha256": "1fd9e9ea5cddcde9a69bc2db011a6c8c0efdf0c2e70566b0f395be6ff7d47d87",
+  "manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81",
+  "token_list_sha256": "e16995c6f5918cc64aea4e99ae8c9d0802c148e79bf40bf2dd36fef34fe6f028",
+  "scope": "single-scene integration check",
+  "training_epochs": 3
+}

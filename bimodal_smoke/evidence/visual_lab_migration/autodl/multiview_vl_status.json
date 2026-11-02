@@ -1,0 +1,8 @@
+{
+  "stage": "training_complete",
+  "updated": 1793574370.1237547,
+  "epochs": 200,
+  "best_ade": 0.5850112930144558,
+  "pdms": "internal validation complete",
+  "pdms_score": 0.814212994416303
+}

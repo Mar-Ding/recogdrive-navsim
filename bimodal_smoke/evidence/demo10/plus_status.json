@@ -1,5 +1,31 @@
 {
-  "stage": "encoding",
-  "time": 1793400529.651193,
-  "gpu": 0
+  "stage": "complete",
+  "time": 1793412616.0303915,
+  "gpu": 0,
+  "metrics": {
+    "demo10_plus_initial": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.46",
+      "drivable_area_compliance": "0.275",
+      "ego_progress": "0.13214886295890188",
+      "time_to_collision_within_bound": "0.29",
+      "comfort": "0.73",
+      "driving_direction_compliance": "0.4475",
+      "score": "0.11047869289954246"
+    },
+    "demo10_plus": {
+      "": "200",
+      "token": "average",
+      "valid": "True",
+      "no_at_fault_collisions": "0.9775",
+      "drivable_area_compliance": "0.855",
+      "ego_progress": "0.7514344711785281",
+      "time_to_collision_within_bound": "0.865",
+      "comfort": "1.0",
+      "driving_direction_compliance": "0.92",
+      "score": "0.7555832370607518"
+    }
+  }
 }

@@ -1,0 +1,68 @@
+{
+  "config": {
+    "flow_recipe": "sensor_velocity_mse_v1",
+    "flow_targets": [
+      "rgb",
+      "lidar"
+    ],
+    "flow_normalization": "fixed per-token layer_norm",
+    "flow_schedule": "0.1 first60pct then linear0",
+    "cosine": "diagnostic only",
+    "variant": "mf",
+    "smoke": false,
+    "seed": 42,
+    "micro_batch": 128,
+    "effective_batch": 128,
+    "gradient_accumulation": 1,
+    "world_size": 1,
+    "epochs": 200,
+    "lr": 0.0001,
+    "min_lr": 1e-06,
+    "warmup_epochs": 3,
+    "scheduler_horizon": 200,
+    "weight_decay": 0.0001,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "precision": "bf16",
+    "frozen_encoder": true,
+    "input": "front RGB 288x160 + LiDAR BEV 256x256; ego status",
+    "manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81"
+  },
+  "train_samples": 8688,
+  "val_samples": 1930,
+  "epochs": 200,
+  "steps": 13600,
+  "seconds": 9769.313204057515,
+  "peak_allocated_gib": 16.475743770599365,
+  "initial": {
+    "epoch": 0,
+    "ade": 9.774312899890958,
+    "fde": 17.829084362761343,
+    "val_loss": 18.357599242610636
+  },
+  "final": {
+    "epoch": 200,
+    "step": 13600,
+    "lr": 1.0062940949824913e-06,
+    "train_loss": 1.023003411776014,
+    "trajectory_train_loss": 1.0222782847191967,
+    "flow_weight": 0.0,
+    "flow_mse": {
+      "rgb": 1.2528043214012594,
+      "lidar": 1.0975095482330042
+    },
+    "flow_cosine": {
+      "rgb": 0.6098626764381633,
+      "lidar": 0.5647286227268487
+    },
+    "grad_norm_mean": 73.9653097601498,
+    "seconds": 46.98931751959026,
+    "ade": 0.7937928461657905,
+    "fde": 1.9866408866921854,
+    "val_loss": 5.729656621211551
+  },
+  "best_val_ade": 0.7879936010726375,
+  "scope": "first 20/200 shards, official navtrain; log-disjoint internal validation; fixed 200 navtest evaluated separately"
+}

@@ -1,0 +1,19 @@
+{
+  "stage": "complete",
+  "updated": "2026-11-02 14:06:16",
+  "result": {
+    "no_at_fault_collisions": 0.98,
+    "drivable_area_compliance": 0.9,
+    "ego_progress": 0.7646660097034893,
+    "time_to_collision_within_bound": 0.925,
+    "comfort": 1.0,
+    "driving_direction_compliance": 0.945,
+    "score": 0.8111108373764537,
+    "pdms_100": 81.11108373764537,
+    "successful_scenarios": 200,
+    "failed_scenarios": 0,
+    "checkpoint_epoch": 176,
+    "seconds": 23.179913997650146,
+    "checkpoint_sha256": "6245a7c06223e1fa2688a920883094f27cf39602b0c16d80a318f7811ba06ece"
+  }
+}

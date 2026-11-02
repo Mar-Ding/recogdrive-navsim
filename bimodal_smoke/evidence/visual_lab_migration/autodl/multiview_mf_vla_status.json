@@ -1,0 +1,7 @@
+{
+  "stage": "training_complete",
+  "updated": 1793540198.425152,
+  "epochs": 200,
+  "best_ade": 0.5528873402980964,
+  "pdms": "not run; test data/maps/cache not yet prepared"
+}

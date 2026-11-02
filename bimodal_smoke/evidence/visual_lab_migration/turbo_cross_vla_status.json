@@ -1,0 +1,8 @@
+{
+  "stage": "training",
+  "updated": 1793589892.493579,
+  "epoch": 18,
+  "done": 128,
+  "samples": 8688,
+  "micro_batch": 128
+}

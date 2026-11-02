@@ -1,0 +1,13 @@
+{
+  "mode": "vl",
+  "epochs": 200,
+  "effective_batch": 128,
+  "micro_batch": 128,
+  "seed": 42,
+  "train": 8884,
+  "val": 1734,
+  "model_sha256": "271e8788648fd5f14c6415dd845d571143d4e7b0010632020c5acbf44d30c8a7",
+  "anchors": "train-only kmeans20",
+  "fusion": "existing TransformerEncoder VL; action only in DiffusionDrive head",
+  "manifest_sha256": "8451de375f3cab22936946677600792c2f27831c5b314363ccc73781224c4dcc"
+}

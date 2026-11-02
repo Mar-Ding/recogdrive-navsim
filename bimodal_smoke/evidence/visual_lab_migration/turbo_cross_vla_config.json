@@ -1,0 +1,13 @@
+{
+  "mode": "vla",
+  "epochs": 200,
+  "effective_batch": 128,
+  "micro_batch": 128,
+  "seed": 42,
+  "train": 8688,
+  "val": 1930,
+  "model_sha256": "a2af4d0ac9ac5a831aff5c3b246531c9ec9d85c8d3ad0e337828d1a4426c9bff",
+  "anchors": "train-only kmeans20",
+  "fusion": "TurboVLA upstream BiAttentionBlock x6 + text enhancement; action cross decoder x2; no MF auxiliary loss",
+  "manifest_sha256": "c317125e6239b232c1c86aa3ac92d42ebab7b7f6c8a188a6e744c2e268adcd3c"
+}

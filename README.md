@@ -1,5 +1,15 @@
 # AD / ReCogDrive 基础实验
 
+## 最新实验：纯视觉 NAVSIM（2026-11-02）
+
+五组训练与固定 200 场景评测已完成：DINOv3-DD 81.11、TurboAD Cross 79.10、TurboMFAD + flow 83.62、TurboMFAD no-flow 85.80、前视 ReCogDrive-TD 86.90 PDMS（百分制）。输入与结构存在差异，详见 [GitHub 部署与复现说明](bimodal_smoke/GITHUB_DEPLOYMENT.md) 和 [完整分项指标](output/charts/NAVSIM_detailed_metrics.md)。模型权重及实际运行源码已单独归档本地，不纳入普通 Git 提交。
+
+![NAVSIM实验结果](bimodal_smoke/assets/navsim/results_overview.png)
+
+模型结构、收敛曲线与评分分项见部署说明，高清 PNG / SVG 及原始数据位于 [`bimodal_smoke/assets/navsim/`](bimodal_smoke/assets/navsim/)。
+
+下方为早期实验记录，数据和模型协议与最新纯视觉实验不同。
+
 基础版本：`v0.1-front-camera-demo`。
 
 已验证官方 ReCogDrive 2B IL 在真实 NAVSIM 前视图上的三样本推理。运行方式、结果及限制见 [demo 说明](recogdrive_demo/README.md)。

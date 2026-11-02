@@ -1,0 +1,26 @@
+{
+  "mode": "vla",
+  "epochs": 200,
+  "effective_batch": 128,
+  "micro_batch": 128,
+  "seed": 42,
+  "train": 8884,
+  "val": 1734,
+  "model_sha256": "271e8788648fd5f14c6415dd845d571143d4e7b0010632020c5acbf44d30c8a7",
+  "anchors": "train-only kmeans20",
+  "fusion": "upstream MFBlock 6x256, shared QKVO, modality FFN, mRoPE, SDPA",
+  "flow_targets": [
+    "vision",
+    "language",
+    "action"
+  ],
+  "flow_mse_weight": 1.0,
+  "flow_cosine_weight": 0.1,
+  "flow_weight": "0.1 first60pct then linear to0",
+  "flow_recipe": "NAVSIM adaptation; not exact old TurboMFVLA reproduction",
+  "source_sha256": {
+    "visual_mf_vla.py": "d6c584517edde38d5faa6962edfd75fe858d2883719dd8a9d3606a2157b3d51f",
+    "train_visual_mf_vla.py": "f4aed163a364a8010e9d4a777d09ee1ee94aa57504cf8969e355a4f55024a22c"
+  },
+  "manifest_sha256": "8451de375f3cab22936946677600792c2f27831c5b314363ccc73781224c4dcc"
+}

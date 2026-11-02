@@ -1,0 +1,28 @@
+{
+  "original_manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81",
+  "train": 8688,
+  "val": 1930,
+  "test": 200,
+  "epochs": 200,
+  "effective_batch": 128,
+  "seed": 42,
+  "split": "exact existing lab demo10; log disjoint",
+  "cameras": [
+    "F0 288x160",
+    "L0 144x80",
+    "R0 144x80"
+  ],
+  "modalities": [
+    "vision",
+    "language instruction",
+    "action"
+  ],
+  "ego": "condition",
+  "metric": "original ReCogDrive PDM scorer, fixed existing 200 navtest tokens",
+  "command_templates": [
+    "turn left",
+    "go straight",
+    "turn right",
+    "unknown"
+  ]
+}

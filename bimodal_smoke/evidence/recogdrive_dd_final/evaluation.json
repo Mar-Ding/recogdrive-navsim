@@ -1,0 +1,20 @@
+{
+  "no_at_fault_collisions": 0.99,
+  "drivable_area_compliance": 0.93,
+  "ego_progress": 0.8235789196659457,
+  "time_to_collision_within_bound": 0.97,
+  "comfort": 0.985,
+  "driving_direction_compliance": 0.955,
+  "score": 0.8689912165274774,
+  "token": "average",
+  "valid": true,
+  "successful_scenarios": 200,
+  "failed_scenarios": 0,
+  "seconds": 193.5106021873653,
+  "checkpoint_epoch": 100,
+  "checkpoint_sha256": "921689c480396cd8a4bd14324b8bec8859aff926a16886407ef7a6453e9a7d93",
+  "manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81",
+  "token_list_sha256": "e16995c6f5918cc64aea4e99ae8c9d0802c148e79bf40bf2dd36fef34fe6f028",
+  "scope": "fixed 200 navtest, native PDM scorer, best validation ADE",
+  "training_epochs": 200
+}

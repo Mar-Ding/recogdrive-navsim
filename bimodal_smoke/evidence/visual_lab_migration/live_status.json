@@ -1,0 +1,34 @@
+{
+  "pipeline": {
+    "stage": "training_then_automatic_pdms",
+    "updated": "2026-11-02 11:20:23",
+    "epochs": 200,
+    "effective_batch": 128,
+    "train": 8688,
+    "val": 1930,
+    "test": 200
+  },
+  "cache": {
+    "stage": "complete",
+    "samples": 10618,
+    "test": 200
+  },
+  "cross": {
+    "stage": "training",
+    "updated": 1793589689.9457822,
+    "epoch": 4,
+    "done": 8320,
+    "samples": 8688,
+    "micro_batch": 128
+  },
+  "mf": {
+    "stage": "training",
+    "updated": 1793589685.6975496,
+    "epoch": 2,
+    "done": 8320,
+    "samples": 8688,
+    "micro_batch": 128,
+    "flow_target": "vision",
+    "flow_weight": 0.1
+  }
+}

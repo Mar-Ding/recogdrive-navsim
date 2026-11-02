@@ -1,0 +1,19 @@
+{
+  "mode": "vla",
+  "epochs": 200,
+  "effective_batch": 128,
+  "micro_batch": 128,
+  "seed": 42,
+  "train": 8688,
+  "val": 1930,
+  "model_sha256": "a2af4d0ac9ac5a831aff5c3b246531c9ec9d85c8d3ad0e337828d1a4426c9bff",
+  "anchors": "train-only kmeans20",
+  "fusion": "MFBlock x6 width256 heads4 sharedQKVO modalityFFN mRoPE; no auxiliary flow",
+  "flow_enabled": false,
+  "flow_weight": 0.0,
+  "source_sha256": {
+    "visual_mf_vla.py": "89e32c972c899aa5c6d04c4c513d2e0bd60e90062e0713e42fdeed6ca9da5e8f",
+    "train_mfad_no_flow.py": "02da4b990305733643e0d02e1f76141ab02e03ff174e8f47b2dad62cee822532"
+  },
+  "manifest_sha256": "c317125e6239b232c1c86aa3ac92d42ebab7b7f6c8a188a6e744c2e268adcd3c"
+}

@@ -1,0 +1,82 @@
+{
+  "source": "real cached NAVSIM sample",
+  "flow": {
+    "vision": {
+      "loss": 2.463998556137085,
+      "mse": 2.3629190921783447,
+      "cosine": -0.010793794877827168,
+      "grad_norm": {
+        "fusion": 0.9022396723197085,
+        "target_head": 0.9082500803253273
+      }
+    },
+    "language": {
+      "loss": 2.420349359512329,
+      "mse": 2.3212337493896484,
+      "cosine": 0.008844016119837761,
+      "grad_norm": {
+        "fusion": 1.289835219810921,
+        "target_head": 0.9908678715460466
+      }
+    },
+    "action": {
+      "loss": 1.0087677240371704,
+      "mse": 0.9264111518859863,
+      "cosine": 0.1764347106218338,
+      "grad_norm": {
+        "fusion": 6.389444459090645,
+        "target_head": 6.083606785404735
+      }
+    }
+  },
+  "inference": {
+    "condition_change_when_noisy_action_changes": 0.0,
+    "action_change": 0.07049751281738281,
+    "trajectory_shape": [
+      2,
+      8,
+      3
+    ]
+  },
+  "timing": [
+    {
+      "batch": 8,
+      "forward_backward_seconds": 0.212000984698534,
+      "peak_gib": 0.5938053131103516
+    },
+    {
+      "batch": 16,
+      "forward_backward_seconds": 0.2399395816028118,
+      "peak_gib": 0.9133567810058594
+    },
+    {
+      "batch": 32,
+      "forward_backward_seconds": 0.1893935389816761,
+      "peak_gib": 1.5781192779541016
+    },
+    {
+      "batch": 64,
+      "forward_backward_seconds": 0.17339324206113815,
+      "peak_gib": 2.8899197578430176
+    }
+  ],
+  "target_isolation": {
+    "vision": 0.0,
+    "language": 0.0,
+    "action": 0.0
+  },
+  "fixed_noise_overfit": {
+    "vision": {
+      "before": 2.462791681289673,
+      "after": 1.6377508640289307
+    },
+    "language": {
+      "before": 2.442293643951416,
+      "after": 1.1303035020828247
+    },
+    "action": {
+      "before": 2.6965243816375732,
+      "after": 0.01379977073520422
+    }
+  }
+}

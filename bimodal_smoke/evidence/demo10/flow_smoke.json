@@ -1,0 +1,15 @@
+{
+  "initial": {
+    "rgb": 2.321239948272705,
+    "lidar": 1.8130815029144287
+  },
+  "final": {
+    "rgb": 1.903860330581665,
+    "lidar": 1.60604989528656
+  },
+  "steps": 20,
+  "seconds": 3.4970509819686413,
+  "peak_gib": 1.381150245666504,
+  "finite": true,
+  "target_leakage_checks": "passed"
+}

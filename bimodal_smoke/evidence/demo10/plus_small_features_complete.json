@@ -1,0 +1,68 @@
+{
+  "files": [
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0000000.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0000256.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0000512.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0000768.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0001024.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0001280.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0001536.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0001792.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0002048.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0002304.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0002560.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0002816.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0003072.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0003328.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0003584.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0003840.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0004096.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0004352.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0004608.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0004864.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0005120.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0005376.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0005632.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0005888.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0006144.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0006400.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0006656.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0006912.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0007168.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0007424.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0007680.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0007936.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0008192.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0008448.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0008704.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0008960.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0009216.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0009472.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0009728.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0009984.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0010240.pt",
+    "/data/ruiqiwang/recogdrive_baseline/demo10/plus_small_features/0010496.pt"
+  ],
+  "samples": 10618,
+  "manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81",
+  "views": [
+    "CAM_F0",
+    "CAM_L0",
+    "CAM_R0"
+  ],
+  "sizes": [
+    [
+      288,
+      160
+    ],
+    [
+      144,
+      80
+    ],
+    [
+      144,
+      80
+    ]
+  ],
+  "front_and_other_inputs_verified_equal": true
+}

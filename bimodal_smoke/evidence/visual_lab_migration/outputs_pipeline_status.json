@@ -1,0 +1,9 @@
+{
+  "stage": "training_then_automatic_pdms",
+  "updated": "2026-11-02 11:20:23",
+  "epochs": 200,
+  "effective_batch": 128,
+  "train": 8688,
+  "val": 1930,
+  "test": 200
+}

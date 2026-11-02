@@ -1,0 +1,10 @@
+{
+  "stage": "training",
+  "updated": 1793536800.2527053,
+  "epoch": 5,
+  "done": 3200,
+  "samples": 8884,
+  "micro_batch": 128,
+  "flow_target": "language",
+  "flow_weight": 0.1
+}

@@ -1,0 +1,6 @@
+{
+  "stage": "complete",
+  "epochs": 200,
+  "successful_scenarios": 200,
+  "pdms": 0.8689912165274774
+}

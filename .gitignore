@@ -20,3 +20,7 @@ login.md
 bimodal_smoke/artifacts/
 bimodal_smoke/outputs/
 *.pt
+output/lab_archive_*/
+output/pdf/
+output/imagegen/
+bimodal_smoke/evidence/visual_lab_migration/lab_manifest.json

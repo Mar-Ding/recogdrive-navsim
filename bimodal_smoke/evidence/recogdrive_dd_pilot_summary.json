@@ -1,0 +1,78 @@
+{
+  "config": {
+    "model": "ReCogDrive-VLM + latent adapter + existing DiffusionDrive head",
+    "native_recogdrive": false,
+    "epochs": 3,
+    "scheduler_horizon": 200,
+    "micro_batch": 128,
+    "effective_batch": 128,
+    "seed": 42,
+    "manifest_sha256": "e0a72e1eb409f01f577c3ed7c14510a6a7eb1463f62d00ba5d6a53289ad73f81",
+    "train": 8688,
+    "val": 1930,
+    "input": "unchanged native frozen VLM full 2800x1536, ego/history; no LiDAR",
+    "latent_grid": "learned 16x16, not measured BEV",
+    "selection": "minimum validation ADE",
+    "cache_loading": "preload CPU RAM; separate loading time",
+    "lr": 0.0001,
+    "wd": 0.0001,
+    "betas": [
+      0.9,
+      0.95
+    ],
+    "clip": 1.0,
+    "precision": "bf16"
+  },
+  "history": [
+    {
+      "epoch": 0,
+      "ade": 6.6928520044514554,
+      "fde": 12.216848454450696,
+      "validation_seconds": 10.79982878267765
+    },
+    {
+      "epoch": 1,
+      "step": 68,
+      "lr": 3.3333333333333335e-05,
+      "train_loss": 16.732223243783633,
+      "train_seconds": 51.68499365635216,
+      "transfer_seconds": 39.9760611448437,
+      "forward_backward_seconds": 11.237520013004541,
+      "seconds": 60.612948117777705,
+      "ade": 7.143839263916016,
+      "fde": 12.254671529661188,
+      "validation_seconds": 8.927134104073048
+    },
+    {
+      "epoch": 2,
+      "step": 136,
+      "lr": 6.666666666666667e-05,
+      "train_loss": 16.303023643915164,
+      "train_seconds": 48.44403333030641,
+      "transfer_seconds": 37.01723690703511,
+      "forward_backward_seconds": 11.081708202138543,
+      "seconds": 57.33780995383859,
+      "ade": 4.183372592431893,
+      "fde": 7.685123795425336,
+      "validation_seconds": 8.893024105578661
+    },
+    {
+      "epoch": 3,
+      "step": 204,
+      "lr": 0.0001,
+      "train_loss": 15.923331792841958,
+      "train_seconds": 49.22940766066313,
+      "transfer_seconds": 37.756960446015,
+      "forward_backward_seconds": 11.092918856069446,
+      "seconds": 59.655132208019495,
+      "ade": 2.6064390676626887,
+      "fde": 5.356390734657722,
+      "validation_seconds": 10.42483240365982
+    }
+  ],
+  "loading_seconds": 697.4277543313801,
+  "pilot_seconds": 181.16733484342694,
+  "best_val_ade": 2.6064390676626887,
+  "peak_allocated_gib": 4.40300989151001,
+  "projected_200_epoch_hours": 3.2889979681414037
+}

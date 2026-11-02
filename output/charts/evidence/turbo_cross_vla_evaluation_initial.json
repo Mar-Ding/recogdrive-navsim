@@ -1,0 +1,15 @@
+{
+  "no_at_fault_collisions": 0.5025,
+  "drivable_area_compliance": 0.585,
+  "ego_progress": 0.2163919420235693,
+  "time_to_collision_within_bound": 0.28,
+  "comfort": 0.68,
+  "driving_direction_compliance": 0.64,
+  "score": 0.1676633091764872,
+  "pdms_100": 16.76633091764872,
+  "successful_scenarios": 200,
+  "failed_scenarios": 0,
+  "checkpoint_epoch": 0,
+  "seconds": 29.617809295654297,
+  "checkpoint_sha256": "ed5abd4365068766092e42c69a5beb9f723f097ecf31214318610e62ae558824"
+}
