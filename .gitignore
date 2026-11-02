@@ -23,4 +23,5 @@ bimodal_smoke/outputs/
 output/lab_archive_*/
 output/pdf/
 output/imagegen/
+output/charts/demo_raw/
 bimodal_smoke/evidence/visual_lab_migration/lab_manifest.json

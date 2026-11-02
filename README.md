@@ -8,6 +8,12 @@
 
 模型结构、收敛曲线与评分分项见部署说明，高清 PNG / SVG 及原始数据位于 [`bimodal_smoke/assets/navsim/`](bimodal_smoke/assets/navsim/)。
 
+真实测试场景演示（三视角输入 + 三版模型预测与真实轨迹）：
+
+![真实场景推理Demo](bimodal_smoke/assets/navsim/scene_demo_1.png)
+
+![TurboMFAD详细结构](bimodal_smoke/assets/navsim/mfad_architecture_detailed.png)
+
 下方为早期实验记录，数据和模型协议与最新纯视觉实验不同。
 
 基础版本：`v0.1-front-camera-demo`。

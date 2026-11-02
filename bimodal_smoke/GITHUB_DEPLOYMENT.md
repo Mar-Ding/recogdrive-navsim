@@ -4,6 +4,24 @@
 
 ## 展示图
 
+### 真实场景推理 Demo
+
+从固定200场景清单中，按各导航指令首次出现的位置选取三例，不按分数筛选。每例含原始三视角预览，以及 Cross / MF+flow / MF no-flow 的实际预测和真实未来轨迹。右侧是自车坐标轨迹图，非相机投影或闭环驾驶视频。
+
+![真实场景1](assets/navsim/scene_demo_1.png)
+
+![真实场景2](assets/navsim/scene_demo_2.png)
+
+![真实场景3](assets/navsim/scene_demo_3.png)
+
+轨迹数据：[scene_demo_predictions.json](assets/navsim/scene_demo_predictions.json)。相机预览展示原始比例，网络实际输入大小已标注。图例中的单场景 ADE 与汇总验证 ADE 不同，不代表 PDMS。
+
+### MF 与辅助目标详细结构
+
+![MF详细结构](assets/navsim/mfad_architecture_detailed.png)
+
+提供 [SVG矢量版](assets/navsim/mfad_architecture_detailed.svg)。
+
 ### 模型结构
 
 ![纯视觉模型结构](assets/navsim/architecture.png)
@@ -20,7 +38,7 @@
 
 ![PDM分项](assets/navsim/pdm_components.png)
 
-图片均提供同名 SVG 矢量版；可下载 [指标原表](assets/navsim/metrics.csv) 与 [曲线原始数据](assets/navsim/training_curves.csv)。图由 `python bimodal_smoke/build_github_figures.py` 从实际日志生成；不需要重新运行模型。
+图片均提供同名 SVG 矢量版；可下载 [指标原表](assets/navsim/metrics.csv) 与 [曲线原始数据](assets/navsim/training_curves.csv)。图由 `python bimodal_smoke/build_github_figures.py` 从实际日志生成；不需要重新运行模型。场景 Demo 与 MF 详细结构图分别由 `build_scene_demos.py` / `build_paper_architecture.py` 生成；原始相机预览不入库，重建前先运行 `fetch_demo_images.py` 从服务器取回。
 
 ## 1. 模型与已完成结果
 
